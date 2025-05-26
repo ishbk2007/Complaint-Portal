@@ -9,13 +9,13 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
-    MAIL_USERNAME=os.environ.get('MAIL_USERNAME', 'ishbk2007@gmail.com'),  # Use your email as sender
+    MAIL_USERNAME='snacompreg@gmail.com',  # Sender email
     MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD'),
     SECRET_KEY=os.environ.get('SECRET_KEY', 'your-secret-key-here')
 )
 
 mail = Mail(app)
-RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'ishbk2007@gmail.com')
+RECIPIENT_EMAIL = 'ishbk2007@gmail.com'  # Recipient email
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
