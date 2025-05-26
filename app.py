@@ -10,8 +10,8 @@ app.config.update(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USERNAME='snacompreg@gmail.com',
-    MAIL_PASSWORD='kxxx xxxx xxxx xxxx',  # Replace with your actual Gmail App Password
-    SECRET_KEY='your-secret-key-here'
+    MAIL_PASSWORD=os.environ.get('MAIL_PASSWORD'),  # Get from environment variable
+    SECRET_KEY=os.environ.get('SECRET_KEY', 'your-secret-key-here')
 )
 
 mail = Mail(app)
@@ -23,7 +23,8 @@ def index():
         complaint = request.form.get('complaint')
         
         if not app.config['MAIL_PASSWORD']:
-            flash('Email configuration is missing! 📧', 'error')
+            print("Error: MAIL_PASSWORD environment variable is not set")
+            flash('Email configuration is missing! Please contact the administrator. 📧', 'error')
             return redirect(url_for('index'))
         
         try:
@@ -42,7 +43,7 @@ def index():
             flash('Thank you! Your complaint has been registered and sent! 🌟', 'success')
         except Exception as e:
             print(f"Error sending email: {str(e)}")
-            flash('Oops! Something went wrong. Please try again! 😢', 'error')
+            flash(f'Oops! Something went wrong: {str(e)}. Please try again! 😢', 'error')
             
         return redirect(url_for('index'))
         
