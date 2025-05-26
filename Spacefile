@@ -1,0 +1,12 @@
+v: 0
+micros:
+  - name: complaint-portal
+    src: .
+    engine: python3.9
+    primary: true
+    public: true
+    presets:
+      env:
+        - name: MAIL_PASSWORD
+          description: Gmail App Password
+    run: python app.py 

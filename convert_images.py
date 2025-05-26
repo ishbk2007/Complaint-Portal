@@ -1,0 +1,17 @@
+import base64
+
+# Bear image
+bear_base64 = "iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAB1klEQVR4nO3dP07DQBiF8W8jBCegp6OhpKKj5RJIHIFzcA0kbsEluAE3oKdFokGiQhqE+GfH4/H4vZ+ULrJiP8+OxomSGQAAAAAAAAAAAEiQ+x5A0rWkB0k3kq4knUqaSzqW9CnpQ9KbpFdJz5IWkj5jDLaOcu9HktYkfUt6lHQn6ULSiTYB7O5HzRDOJF1Kupd0JOlF0pOkj9B/yIBNw3iWdCtpX7szp6R9STeSbiTNJP2E+gMGaBrGQtLlnmHsOpR0Lel8+wdrxjGGMJ4knW0Z0K4zSefbj8f+hwzIdF08SLpWuG3lVNLhvl8e0lV7LulW4cNQwWHMCvyeUgwpjGJhSGUHUjSMkMFXH0ipgRQPQyozkGoCkcoPpNpAqg2k+kCqDaT6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg+k+kCqD6T6QKoPpPpAqg8EAAAAAAAAAAAAwAD9AjqWVmb19ra4AAAAAElFTkSuQmCC"
+
+# Tulips image
+tulips_base64 = "iVBORw0KGgoAAAANSUhEUgAAAHgAAAAUCAYAAABGUvnzAAAABmJLR0QA/wD/AP+gvaeTAAABZ0lEQVRoge2ZQU7DMBBFn1EXlXrKXoG9xDgHhJ6i5/AGHKKn4BLcA7FCQqoqFk0cxx7bM07yJEtVf+z5tmMpmQAHwBPwDnwBK2AFfAAfwCtwD5wN7bRSNsDjSHwDr8A9cD60U+AceAY2tAXtxhfwAlwO6dQlcAcsgb/E/L/tPAGXQzh0DTwDvwkO/LefwM1Ynbm1oH0NxLkFHvp0ZgY8AH8ZnU/FN3DThzNXwHsPjufGsu8Z/WNB+3UEzpfEtW9HbhNz/gDnkdxvwEcP/bEwj+TOgVVhzgq4ieQuInmxWABnkdxFQc4HcB3JXUZyY7KM5D4X5LwBV5HcVSQ3JqtI7ltBzjKSO4/kxmQeyX0vyPn/LMeWkqsZ2zFQc7VjOQZqrnYsx0DN1Y7lGKi52rEcAzVXO5ZjoOZqx3IM1FztWI6BmqsdyzFQc7VjOQZqrnYsx0DN1Y7lGKi52gEOgF8A+V+2G3DhYAAAAABJRU5ErkJggg=="
+
+# Convert and save bear image
+with open('static/images/bear.png', 'wb') as f:
+    f.write(base64.b64decode(bear_base64))
+
+# Convert and save tulips image
+with open('static/images/tulips.png', 'wb') as f:
+    f.write(base64.b64decode(tulips_base64))
+
+print("Images have been converted and saved successfully!") 
